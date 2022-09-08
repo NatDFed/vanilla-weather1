@@ -38,3 +38,17 @@ li {
     border: 1px solid #FFB252;
     border-radius: 5px;
 }
+.weather-temperature img {
+    height: 64px;
+    width: 64px;
+}
+.weather-temperature strong {
+    color:#FFB252;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 400;
+}
+.weather-temperature .units {
+    position: relative;
+    font-size: 16px;
+}
