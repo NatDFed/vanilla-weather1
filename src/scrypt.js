@@ -12,7 +12,6 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
 }
-
 function showTemp(response) {
 let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city");
@@ -28,5 +27,6 @@ windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 let apiKey = "10566d0f9902e77e497ca722e7aa0b84";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Cork&appid=${apiKey}&units=metric`;
+let city = "Cork";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemp);
