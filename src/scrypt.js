@@ -50,6 +50,11 @@ function showFahrTemp(event) {
     let fahrTemp = (celsTemp * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(fahrTemp);
 }
+function showCelsTemp(event) {
+    event.preventDefault();
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML = Math.round(celsTemp);
+}
 
 let celsTemp = null;
 
@@ -59,5 +64,7 @@ form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrTemp);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsTemp);
 
 search("Cork");
