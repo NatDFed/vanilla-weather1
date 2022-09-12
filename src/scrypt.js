@@ -55,6 +55,9 @@ function showFahrTemp(event) {
 }
 function showCelsTemp(event) {
     event.preventDefault();
+    //remove active of F
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(celsTemp);
 }
