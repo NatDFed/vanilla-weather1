@@ -20,7 +20,11 @@ let humidityElement = document.querySelector("#humidity");
 let windElement = document.querySelector("#wind");
 let dateElement = document.querySelector("#date");
 let iconElement = document.querySelector("#icon");
-temperatureElement.innerHTML = Math.round(response.data.main.temp);
+
+celsTemp = response.data.main.temp;
+
+
+temperatureElement.innerHTML = Math.round(celsTemp);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 humidityElement.innerHTML = response.data.main.humidity;
@@ -43,13 +47,17 @@ function handleSubmit(event) {
 function showFahrTemp(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
-    let fahrTemp = (temperatureElement * 9) / 5 * 32;
+    let fahrTemp = (celsTemp * 9) / 5 + 32;
     temperatureElement.innerHTML = Math.round(fahrTemp);
 }
-search("Cork");
+
+let celsTemp = null;
+
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrTemp);
+
+search("Cork");
