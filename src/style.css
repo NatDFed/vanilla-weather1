@@ -60,6 +60,6 @@ li::first-letter {
     color:black;
     cursor: default;
 }
-.weather-temperature .active:hover {
-    text-decoration: none;
+.weather-temperature .active :hover {
+    text-decoration:none;
 }
