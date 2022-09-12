@@ -57,9 +57,9 @@ li::first-letter {
     font-size: 16px;
 }
 .weather-temperature .active {
-    color:black;
+    color:#FFB252;
     cursor: default;
 }
 .weather-temperature .active :hover {
-    text-decoration:none;
+    text-decoration: none;
 }
