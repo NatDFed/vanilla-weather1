@@ -17,7 +17,6 @@ function showForecast() {
 
     let forecastHTML = `<div class="row"`;
     forecastHTML = forecastHTML + `
-     <div class="row">
         <div class="col-2">
             <div class="weather-forecast-date">
             Thu<br/>
@@ -29,10 +28,8 @@ function showForecast() {
             12 </span>
         </div>
         </div>
-    </div>
     `;
     forecastHTML = forecastHTML + `
-     <div class="row">
         <div class="col-2">
             <div class="weather-forecast-date">
             Thu<br/>
@@ -44,9 +41,8 @@ function showForecast() {
             12 </span>
         </div>
         </div>
-    </div>
     `;
-    forecastHTML = `</div>`;
+    forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
 
