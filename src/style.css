@@ -16,6 +16,9 @@ h1 {
     text-align: left;
     margin-bottom: 0;
 }
+small {
+    color: #EC6E4C;
+}
 ul {
     margin: 0;
     padding: 0;
@@ -38,7 +41,7 @@ li::first-letter {
 }
 .weather-app {
     padding: 20px;
-    border: 1px solid #FFB252;
+    border: 1px solid #EC6E4C;
     border-radius: 5px;
 }
 .weather-temperature img {
@@ -46,7 +49,7 @@ li::first-letter {
     width: 64px;
 }
 .weather-temperature strong {
-    color:#FFB252;
+    color: #EC6E4C;
     font-size: 64px;
     line-height: 1;
     font-weight: 400;
@@ -56,7 +59,7 @@ li::first-letter {
     font-size: 16px;
 }
 .weather-temperature .active {
-    color:#FFB252;
+    color: #EC6E4C;
     cursor: default;
 }
 .weather-temperature .active :hover {
