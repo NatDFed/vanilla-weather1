@@ -33,9 +33,9 @@ function showForecast(response) {
             <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="icon" width="42"/>
             <div class="weather-forecast-temps">
                 <span class="weather-forecast-temp-max">
-            ${forecastDay.temp.max}° </span>
+            ${Math.round(forecastDay.temp.max)}° </span>
             <span class="weather-forecast-temp-min">
-            ${forecastDay.temp.min}° </span>
+            ${Math.round(forecastDay.temp.min)}° </span>
         </div>
     </div>
     `;    
