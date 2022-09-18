@@ -12,6 +12,12 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
 }
+function showForecast() {
+    let forecastElement = document.querySelector("#forecast");
+
+    forecastElement.innerHTML = "Forecast";
+}
+
 function showTemp(response) {
 let temperatureElement = document.querySelector("#temperature");
 let cityElement = document.querySelector("#city");
@@ -74,3 +80,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsTemp);
 
 search("Cork");
+showForecast();
