@@ -12,7 +12,8 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${hours}:${minutes}`;
 }
-function showForecast() {
+function showForecast(response) {
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
     let days = ["Thu", "Fri", "Sat", "Sun"];
     let forecastHTML = `<div class="row">`;
@@ -40,7 +41,7 @@ function getForecast(coordinates) {
     console.log(coordinates);
     let apiKey = "10566d0f9902e77e497ca722e7aa0b84";
     let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-    console.log(apiUrl);
+    axios.get(apiUrl).then(showForecast);
 }
 
 function showTemp(response) {
@@ -63,6 +64,9 @@ windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
+
+getForecast(response.data.coord);
+
 }
 function search(city) {
     let apiKey = "10566d0f9902e77e497ca722e7aa0b84";
@@ -105,4 +109,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsTemp);
 
 search("Cork");
-showForecast();
