@@ -13,7 +13,7 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 function showForecast(response) {
-    console.log(response.data.daily);
+    console.log(response.data);
     let forecastElement = document.querySelector("#forecast");
     let days = ["Thu", "Fri", "Sat", "Sun"];
     let forecastHTML = `<div class="row">`;
@@ -64,6 +64,8 @@ windElement.innerHTML = Math.round(response.data.wind.speed);
 dateElement.innerHTML = formatDate(response.data.dt * 1000);
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 iconElement.setAttribute("alt", response.data.weather[0].description);
+
+getForecast(response.data.coord);
 }
 function search(city) {
     let apiKey = "10566d0f9902e77e497ca722e7aa0b84";
