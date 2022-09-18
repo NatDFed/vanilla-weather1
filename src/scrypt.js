@@ -13,21 +13,21 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 function showForecast(response) {
-    console.log(response.data);
+    let forecast = response.data.daily;
     let forecastElement = document.querySelector("#forecast");
     let days = ["Thu", "Fri", "Sat", "Sun"];
     let forecastHTML = `<div class="row">`;
     
-    days.forEach(function(day) {
+    forecast.forEach(function(forecastDay) {
     forecastHTML = forecastHTML + `
         <div class="col-2">
-            <div class="weather-forecast-date"><br/>${day}</div>
-            <img src="src/sun-128x128-445578.png" alt="" width="42"/>
+            <div class="weather-forecast-date"><br/>${forecastDay.dt}</div>
+            <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="icon" width="42"/>
             <div class="weather-forecast-temps">
                 <span class="weather-forecast-temp-max">
-            18 </span>
+            ${forecastDay.temp.max}° </span>
             <span class="weather-forecast-temp-min">
-            12 </span>
+            ${forecastDay.temp.min}° </span>
         </div>
     </div>
     `;    
