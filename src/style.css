@@ -72,10 +72,10 @@ li::first-letter {
 }
 .weather-forecast-date {
     font-size: 16px;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 .weather-forecast-temp-min {
-    opacity: 0.5;
+    opacity: 0.7;
 }
 .weather-forecast-temps {
     font-size: 13px;
