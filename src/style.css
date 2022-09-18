@@ -89,3 +89,9 @@ li::first-letter {
 #wind {
     color:#EC6E4C;
 }
+.quote {
+    color:#EC6E4C;
+    text-align: left;
+    font-size: 14px;
+    font-style: italic;
+}
