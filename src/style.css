@@ -83,3 +83,6 @@ li::first-letter {
 .weather-forecast-temps {
     font-size: 13px;
 }
+.humidity {
+    color:#EC6E4C; 
+}
